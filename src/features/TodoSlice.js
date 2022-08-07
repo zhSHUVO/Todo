@@ -2,22 +2,8 @@ const { createSlice } = require("@reduxjs/toolkit");
 
 const initialTodos = {
     todos: [
-        { id: 1, title: "finish course", description: "finish redux course" },
-        {
-            id: 2,
-            title: "build todo app",
-            description: "build todo app using redux toolkit",
-        },
-        {
-            id: 3,
-            title: "build todo app",
-            description: "build todo app using redux toolkit",
-        },
-        {
-            id: 4,
-            title: "build todo app",
-            description: "build todo app using redux toolkit",
-        },
+        { id: 1, title: "Demo", description: "This is a demo todo." },
+        { id: 2, title: "How to", description: "Go to add todo directory." },
     ],
 };
 
@@ -26,8 +12,11 @@ export const todoSlice = createSlice({
     initialState: initialTodos,
     reducers: {
         showTodos: (state) => state,
+        addTodo: (state, action) => {
+            state.todos.push(action.payload);
+        },
     },
 });
 
-export const { showTodos } = todoSlice.actions;
+export const { showTodos, addTodo } = todoSlice.actions;
 export default todoSlice.reducer;
