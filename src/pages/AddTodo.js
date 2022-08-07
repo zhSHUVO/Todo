@@ -47,7 +47,7 @@ const AddTodo = () => {
                         </div>
                         <div className="form-control mt-6">
                             <button type="submit" className="btn btn-primary">
-                                Save
+                                Add
                             </button>
                         </div>
                     </div>
