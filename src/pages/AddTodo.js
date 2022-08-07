@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import { addTodo } from "../features/TodoSlice";
 
 const AddTodo = () => {
@@ -9,13 +10,9 @@ const AddTodo = () => {
     const dispatch = useDispatch("");
     const navigate = useNavigate();
 
-    const numberofTodos = useSelector(
-        (state) => state.todosReducer.todos.length
-    );
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        const todo = { id: numberofTodos + 1, title, description };
+        const todo = { id: uuidv4(), title, description };
         dispatch(addTodo(todo));
         navigate("/home", { replace: true });
     };

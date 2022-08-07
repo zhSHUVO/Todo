@@ -8,7 +8,7 @@ const EditTodo = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     console.log(location);
-    const [id, setId] = useState(location.state.id);
+    const [id] = useState(location.state.id);
     const [title, setTitle] = useState(location.state.title);
     const [description, setDescription] = useState(location.state.description);
 

@@ -1,9 +1,15 @@
 const { createSlice } = require("@reduxjs/toolkit");
 
+const { v4: uuidv4 } = require("uuid");
+
 const initialTodos = {
     todos: [
-        { id: 1, title: "Demo", description: "This is a demo todo." },
-        { id: 2, title: "How to", description: "Go to add todo directory." },
+        { id: uuidv4(), title: "Demo", description: "This is a demo todo." },
+        {
+            id: uuidv4(),
+            title: "How to",
+            description: "Go to add todo directory.",
+        },
     ],
 };
 
